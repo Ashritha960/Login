@@ -3,11 +3,14 @@ package com.risk.dao;
 import java.io.Serializable;
 
 import java.lang.reflect.ParameterizedType;
- 
+import java.util.List;
+
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import com.risk.model.OrderDetails;
  
 public abstract class AbstractDao<PK extends Serializable, T> {
      
@@ -41,5 +44,7 @@ public abstract class AbstractDao<PK extends Serializable, T> {
     protected Criteria createEntityCriteria(){
         return getSession().createCriteria(persistentClass);
     }
+
+	
  
 }

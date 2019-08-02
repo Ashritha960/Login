@@ -89,7 +89,7 @@ body {
 </head>
 <body>
 
-	<form:form action="/hibernateProject1/nextpage" method="POST" modelAttribute="login">
+	<form:form action="/hibernateProject1/billprocess" method="POST" modelAttribute="employeedetails">
 		<div class="imgcontainer">
 
 			<img src="<c:url value="/resources/images/user.png"/>" alt="Avatar"
@@ -98,19 +98,35 @@ body {
 
 		<div class="login-box">
 			<div class="textbox">
-				<b>USERNAME</b><br>
-				<form:input path="username" placeholder="Enter Username"></form:input>
-				<form:errors path="username" cssClass="error"></form:errors>
+				<b>EMAIL</b><br>
+				<form:input path="email" placeholder="Enter Email"/>
+				
+				<form:errors path="email" cssClass="error"></form:errors>
 			</div>
 
 			<div class="textbox">
 
 				<b>PASSWORD</b><br>
-				<form:input path="password" placeholder="Enter Password"></form:input>
+				
+
+<form:input path="password" type="password"  placeholder="Password"/>
 				<form:errors path="password" type="password" cssClass="error"></form:errors>
 
 			</div>
+			
+			
+			
 
+				<td colspan="3">
+                    <c:choose>
+                        <c:when test="${hasError}">
+                           <center> <h4 class="error">Invalid Credentials</h4></center>
+                        </c:when>
+                        <c:otherwise>
+                        
+                        </c:otherwise>
+                    </c:choose>
+                </td>
 			<input type="submit" value="Login" /><br> <a
 				class="forgotpassword" href="url">Forget Password</a><br> <a
 				class="register" href="url">Register</a>

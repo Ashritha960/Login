@@ -15,6 +15,7 @@ import org.springframework.web.servlet.view.JstlView;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "com.risk")
+
 public class AppConfig extends WebMvcConfigurerAdapter{
 	@Bean
 	public ViewResolver viewResolver() {
